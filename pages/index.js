@@ -3,6 +3,14 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
+async function getRequestPermission() {
+  if (typeof DeviceMotionEvent.requestPermission != 'function') return 'denided';
+  return await DeviceMotionEvent.requestPermission();
+}
+
+function roundNum(val) {
+  return Math.round(val * Math.pow(10, 2)) / Math.pow(10, 2);
+}
 
 export default function Home() {
   const [motionData, setMotionData] = useState({
@@ -39,14 +47,14 @@ export default function Home() {
     <div>
       <h1>Device Motion Data:</h1>
       <h2>Acceleration:</h2>
-      <p>X: {motionData.acceleration.x}</p>
-      <p>Y: {motionData.acceleration.y}</p>
-      <p>Z: {motionData.acceleration.z}</p>
+      <p>X: {roundNum(motionData.acceleration.x)}</p>
+      <p>Y: {roundNum(motionData.acceleration.y)}</p>
+      <p>Z: {roundNum(motionData.acceleration.z)}</p>
 
       <h2>Rotation Rate:</h2>
-      <p>Alpha: {motionData.rotationRate.alpha}</p>
-      <p>Beta: {motionData.rotationRate.beta}</p>
-      <p>Gamma: {motionData.rotationRate.gamma}</p>
+      <p>Alpha: {roundNum(motionData.rotationRate.alpha)}</p>
+      <p>Beta: {roundNum(motionData.rotationRate.beta)}</p>
+      <p>Gamma: {roundNum(motionData.rotationRate.gamma)}</p>
     </div>
       <button
         className='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
@@ -57,7 +65,3 @@ export default function Home() {
   )
 }
 
-async function getRequestPermission() {
-  if (typeof DeviceMotionEvent.requestPermission != 'function') return 'denided';
-  return await DeviceMotionEvent.requestPermission();
-}
