@@ -45,16 +45,19 @@ export default function Home() {
   return (
     <main className="font-mono p-8">
     <div>
-      <h1>Device Motion Data:</h1>
-      <h2>Acceleration:</h2>
-      <p>X: {roundNum(motionData.acceleration.x)}</p>
-      <p>Y: {roundNum(motionData.acceleration.y)}</p>
-      <p>Z: {roundNum(motionData.acceleration.z)}</p>
+      <h2 className='font-bold'>加速度</h2>
+      <div className='text-xl'>
+        <p>X: {roundNum(motionData.acceleration.x)}</p>
+        <p>Y: {roundNum(motionData.acceleration.y)}</p>
+        <p>Z: {roundNum(motionData.acceleration.z)}</p>
+      </div>
 
-      <h2>Rotation Rate:</h2>
-      <p>Alpha: {roundNum(motionData.rotationRate.alpha)}</p>
-      <p>Beta: {roundNum(motionData.rotationRate.beta)}</p>
-      <p>Gamma: {roundNum(motionData.rotationRate.gamma)}</p>
+      <h2 className='font-bold'>角速度</h2>
+      <div className='text-xl'>
+        <p>α: {roundNum(motionData.rotationRate.alpha)}</p>
+        <p>β: {roundNum(motionData.rotationRate.beta)}</p>
+        <p>γ: {roundNum(motionData.rotationRate.gamma)}</p>
+      </div>
     </div>
       <button
         className='m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
