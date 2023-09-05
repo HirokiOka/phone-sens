@@ -47,16 +47,16 @@ export default function Home() {
     <div>
       <h2 className='font-bold'>加速度</h2>
       <div className='text-xl'>
-        <p>X: <span className='text-3x'>{roundNum(motionData.acceleration.x)}</span></p>
-        <p>Y: <span className='text-3x'>{roundNum(motionData.acceleration.y)}</span></p>
-        <p>Z: <span className='text-3x'>{roundNum(motionData.acceleration.z)}</span></p>
+        <p>X: <span className='text-3xl'>{roundNum(motionData.acceleration.x)}</span></p>
+        <p>Y: <span className='text-3xl'>{roundNum(motionData.acceleration.y)}</span></p>
+        <p>Z: <span className='text-3xl'>{roundNum(motionData.acceleration.z)}</span></p>
       </div>
 
       <h2 className='font-bold'>角速度</h2>
       <div className='text-xl'>
-        <p>α: <span className='text-3x'>{roundNum(motionData.rotationRate.alpha)}</span></p>
-        <p>β: <span className='text-3x'>{roundNum(motionData.rotationRate.beta)}</span></p>
-        <p>γ: <span className='text-3x'>{roundNum(motionData.rotationRate.gamma)}</span></p>
+        <p>α: <span className='text-3xl'>{roundNum(motionData.rotationRate.alpha)}</span></p>
+        <p>β: <span className='text-3xl'>{roundNum(motionData.rotationRate.beta)}</span></p>
+        <p>γ: <span className='text-3xl'>{roundNum(motionData.rotationRate.gamma)}</span></p>
       </div>
     </div>
       <button
